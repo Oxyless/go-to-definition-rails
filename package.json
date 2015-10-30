@@ -1,0 +1,18 @@
+{
+  "name": "go-to-definition-rails",
+  "main": "./lib/go-to-definition-rails",
+  "version": "0.0.1",
+  "description": "Allow user to go to ruby definition",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "go-to-definition-rails:goToDefinition"
+  },
+  "repository": "https://github.com/atom/go-to-definition-rails",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
