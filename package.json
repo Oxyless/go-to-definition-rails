@@ -6,7 +6,8 @@
   "keywords": [
   ],
   "activationCommands": {
-    "atom-workspace": "go-to-definition-rails:goToDefinition"
+    "atom-workspace": [ "go-to-definition-rails:goToMethodDefinition",
+                      "go-to-definition-rails:goToClassMethodDefinition" ]
   },
   "repository": "https://github.com/atom/go-to-definition-rails",
   "license": "MIT",

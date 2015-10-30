@@ -13,8 +13,12 @@
       'label': 'Rails'
       'submenu': [
         {
-          'label': 'Go To Definition'
-          'command': 'go-to-definition-rails:goToDefinition'
+          'label': 'Go To Method Definition'
+          'command': 'go-to-definition-rails:goToMethodDefinition'
+        },
+        {
+          'label': 'Go To Class Method Definition'
+          'command': 'go-to-definition-rails:goToClassMethodDefinition'
         }
       ]
     ]

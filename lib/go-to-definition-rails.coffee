@@ -10,24 +10,34 @@ module.exports = GoToDefinitionRails =
     @subscriptions = new CompositeDisposable
 
     # Register command that toggles this view
-    @subscriptions.add atom.commands.add 'atom-workspace', 'go-to-definition-rails:goToDefinition': => @goToDefinition()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'go-to-definition-rails:goToMethodDefinition': => @goToMethodDefinition()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'go-to-definition-rails:goToClassMethodDefinition': => @goToClassMethodDefinition()
 
   deactivate: ->
     @subscriptions.dispose()
     @finder.cancel() if @finder?
 
-  goToDefinition: ->
+  goToMethodDefinition: ->
     workspace = atom.workspace
     editor = workspace.getActivePaneItem()
     current_word = editor.getWordUnderCursor()
+    @goTo(///def\s+#{current_word}///)
 
+  goToClassMethodDefinition: ->
+    workspace = atom.workspace
+    editor = workspace.getActivePaneItem()
+    current_word = editor.getWordUnderCursor()
+    @goTo(///def\s+(self\.)#{current_word}///)
+
+  goTo: (regex) ->
     @finder.cancel() if @finder?
 
-    @finder = finder = atom.workspace.defaultDirectorySearcher.search(atom.project.rootDirectories, ///def\s+(self\.)?#{current_word}///, {
+    @finder = finder = atom.workspace.defaultDirectorySearcher.search(atom.project.rootDirectories, regex, {
       inclusions: ['*.rb']
       didMatch: (searchResult) ->
-        workspace.open(searchResult.filePath, { initialLine: searchResult['matches'][0].range[0][0] })
+        atom.workspace.open(searchResult.filePath, { initialLine: searchResult['matches'][0].range[0][0] })
         finder.cancel()
       didError: () ->
       didSearchPaths: () ->
     })
+# method1
