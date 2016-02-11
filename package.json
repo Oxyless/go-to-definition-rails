@@ -1,7 +1,7 @@
 {
   "name": "go-to-definition-rails",
   "main": "./lib/go-to-definition-rails",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Allow user to go to ruby definition",
   "keywords": [
   ],
