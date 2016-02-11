@@ -1,20 +1,19 @@
 {
   "name": "go-to-definition-rails",
   "main": "./lib/go-to-definition-rails",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Allow user to go to ruby definition",
-
-  "keywords": [
-  ],
+  "keywords": [],
   "activationCommands": {
-    "atom-workspace": [ "go-to-definition-rails:goToMethodDefinition",
-                      "go-to-definition-rails:goToClassMethodDefinition" ]
+    "atom-workspace": [
+      "go-to-definition-rails:goToMethodDefinition",
+      "go-to-definition-rails:goToClassMethodDefinition"
+    ]
   },
   "repository": "https://github.com/Oxyless/go-to-definition-rails.git",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
