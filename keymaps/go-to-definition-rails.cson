@@ -8,5 +8,5 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/behind-atom-keymaps-in-depth
 'atom-workspace':
-  'cmd-§': 'go-to-definition-rails:goToMethodDefinition',
-  'alt-cmd-§': 'go-to-definition-rails:goToClassMethodDefinition'
+  'alt-cmd-enter': 'go-to-definition-rails:goToMethodDefinition',
+  'ctrl-alt-cmd-enter': 'go-to-definition-rails:goToClassMethodDefinition'
